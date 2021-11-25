@@ -1,0 +1,36 @@
+{
+    "name": "cuephp/orm",
+    "type": "library",
+    "description": "cuephp ORM Component",
+    "keywords": ["orm", "mysql", "sqlite"],
+    "license": "MIT",
+    "version": "0.1.0",
+    "require": {
+        "php": "^7.1 || ^8.0",
+        "ext-pdo": "*",
+        "vlucas/phpdotenv": "^5.4"
+    },
+    "autoload": {
+        "psr-4": { 
+            "CuePhp\\Orm\\": "src/" 
+        }
+    },
+    "autoload-dev": {
+        "psr-4": { 
+            "CuePhp\\Orm\\Test\\": "tests/" 
+        }
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "*",
+        "phpstan/phpstan": "^1.2",
+        "phpunit/phpunit": "^9.5" 
+    },
+    "scripts": {
+        "fix":  [
+            "./vendor/bin/phpcbf --standard=PSR2 src"
+        ],
+        "analyse": [
+            "./vendor/bin/phpstan analyse src"
+        ]
+    }
+}
